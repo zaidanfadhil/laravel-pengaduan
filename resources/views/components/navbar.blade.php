@@ -1,9 +1,10 @@
-<header id="header">
-    <div class="container d-flex align-items-center">
 
-        <div class="logo mr-auto">
+<header id="header" class="fixed-top">
+    <div class="container">
+      <div class="row">
+      <div class="logo mr-auto">
           <h1 class="text-light"><a href="/"><span> laporan pengaduan<span>.</span></a></h1>
-        </div>
+      </div>
 
 
           <nav class="nav-menu d-none d-lg-block">
@@ -21,24 +22,28 @@
 
             </ul>
           </nav>
-
-
-    </header>
-
-
-    <section id="hero">
-
-        <div class="container">
-          <div class="row d-flex align-items-center">
-          <div class=" col-lg-6 py-5 py-lg-0 order-2 order-lg-1">
-            <h1>Layanan Aspirasi Pengaduan Online Masyarakat</h1>
-            <h2>Ayo Laporkan Aspirasi Pengaduan Anda!!!</h2>
-            <a href="/login" class="btn-get-started scrollto">Yu Lapor</a>
           </div>
-          <div class="col-lg-6 order-1 order-lg-2 hero-img">
-            <img src="Bocor/assets/img/hero-img.png" class="img-fluid" alt="">
-          </div>
-        </div>
-        </div>
+    </div>
+  </header><!-- #header -->
 
-      </section>
+  <section id="intro" class="clearfix">
+    <div class="container" data-aos="fade-up">
+
+      <div class="intro-img" data-aos="zoom-out" data-aos-delay="200">
+        <img src="{{ asset('img/logopengaduan.png')}}" alt="" height="500px" class="img-fluid">
+      </div>
+
+      <div class="intro-info" data-aos="zoom-in" data-aos-delay="100">
+        <h2>We provide<br><span>solutions</span><br>for your business!</h2>
+        <div>
+          <a href="#about" class="btn-get-started scrollto">Get Started</a>
+          <a href="#services" class="btn-services scrollto">Our Services</a>
+        </div>
+      </div>
+
+    </div>
+    <!-- <img src="{{ asset('img/kisspng-product-design-brand-logo-font-claim-rade-garage-5b7fa9d62ab7f8.318210391535093206175.png')}}" alt="" height="300px"> -->
+  </section><!-- End Intro Section -->
+
+
+

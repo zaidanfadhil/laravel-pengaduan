@@ -36,7 +36,7 @@ Route::middleware('masyarakat')->group(function(){
     Route::get('pengaduan','MasyarakatController@FormPengaduan');
     Route::post('pengaduan/simpan','MasyarakatController@simpanPengaduan')->name(
         'masyarakat.pengaduan');
-    Route::get('laporan_pengaduan','MasyarakatController@laporanku');
+    Route::get('laporan_pengaduan','MasyarakatController@laporanku')->name('laporan_pengaduan');
     Route::get('logout','MasyarakatController@logout');
     Route::get('laporan_pengaduan/detailLaporan/{id}','MasyarakatController@detailLaporan');
 

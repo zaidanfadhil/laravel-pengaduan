@@ -8,7 +8,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 class Masyarakat extends Authenticatable
 {
     protected $table = "masyarakats";
-    protected $fillable = ['nama','username','password','telp'];
+    protected $fillable = ['nik', 'nama','username','password','telp','api_token'];
     protected $primaryKey = "nik";
     protected $guard = "masyarakat";
     protected $hidden = ['password'];

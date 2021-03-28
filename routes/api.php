@@ -16,8 +16,13 @@ use Illuminate\Http\Request;
 
 Route::get('pengaduan','ApiController@index');
 Route::get('masyarakat','ApiController@getMasyarakat');
+Route::get('tanggapan','ApiController@tanggapan');
 
+Route::post('login','ApiController@login');
+Route::get('logout', 'ApiController@logout');
 Route::post('masyarakat','ApiController@store');
+
+
 
 
 
