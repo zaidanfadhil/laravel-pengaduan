@@ -11,7 +11,7 @@
                         <a href="/petugas/pengaduan">
                             <i class="fas fa-arrow-circle-left fa-2x"></i>
                         </a>
-                        <h3>Haloo dinnayy</h3>
+                        <h3>Tanggapan</h3>
                    </div>
                 </div>
 

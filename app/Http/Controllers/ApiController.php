@@ -50,7 +50,7 @@ class ApiController extends Controller
     }
 
 
-    public function store(Request $request)
+    public function register(Request $request)
     {
         try {
             $masyarakat = New Masyarakat;
@@ -63,7 +63,7 @@ class ApiController extends Controller
         } catch (\Throwable $th) {
             return $th;
         }
-        return response()->json(['status'=>200, 'message'=>'Success Login', 'user'=>$masyarakat]);
+        return response()->json(['status'=>200, 'message'=>'Success register', 'user'=>$masyarakat]);
     }
 
     public function tanggapan()
@@ -80,6 +80,105 @@ class ApiController extends Controller
         $masyarakat = Masyarakat::where('api_token', $token)->first();
         $masyarakat->api_token = null;
         $masyarakat->save();
-        return response()->json(['status'=>200, 'message'=>'Success Login', 'user'=>$masyarakat]);
+        return response()->json(['status'=>200, 'message'=>'Success logout', 'user'=>$masyarakat]);
     }
+    public function getPengaduan()
+  {
+    $data = Pengaduans::all();
+    if ($data) {
+      return response()->json([
+        'success' =>  true,
+        'code'    =>  200,
+        'message' =>  'Success get Pengaduan',
+        'data'    =>  $data
+      ], 200);
+    } else {
+      return response()->json([
+        'success' =>  true,
+        'code'    =>  400,
+        'message' =>  'Failed Get Pengaduan',
+        'data'    =>  ''
+      ], 400);
+    }
+  }
+
+  public function createPengaduan(Request $request)
+  {
+    $masyarakat = Masyarakat::where('api_token', explode(' ', $request->header('Authorization'))[1])->first();
+    //get image
+    if ($request->hasFile('foto')) {
+      $original_filename  = $request
+      ->file('foto')
+      ->getClientOriginalName();
+    $original_filename_arr  = explode('.', $original_filename);
+    $file_ext = end($original_filename_arr);
+    $destination_path = './img';
+    $image  = 'A-' . time() . '.' . $file_ext;
+    $request->file('foto')->move($destination_path, $image);
+    $fotopengaduan = 'http://127.0.0.1:8000/img/' . $image;
+    }
+
+
+    $tanggal_pengaduan  = $request->input('tanggal_pengaduan');
+    $isi_laporan    = $request->input('isi_laporan');
+    $foto           = $request->input('foto');
+    $status    = $request->input('status');
+    //get data
+    $data = [
+      'tanggal_pengaduan' =>  $tanggal_pengaduan,
+      'nik' =>  $masyarakat->nik,
+      'isi_laporan'      =>  $isi_laporan,
+      'foto'   =>  $image,
+      'status'          =>  '0'
+    ];
+
+    if (Pengaduan::create($data)) {
+      return response()->json([
+        'success' =>  true,
+        'code'    =>  200,
+        'message' =>  'Pengaduan was Created',
+        'data'    =>  $data
+      ], 200);
+    } else {
+      return response()->json([
+        'success' =>  false,
+        'code'    =>  400,
+        'message' =>  'Pengaduan created failed',
+        'data'    =>  ''
+      ], 400);
+    }
+  }
+
+  
+  public function getPengaduanId($id)
+  {
+    $data = Pengaduan::where('id', $id)->get();
+
+    return response()->json([
+      'success' => true,
+      'code'    =>  200,
+      'message' =>  'success get pengaduan by id',
+      'data'    =>  $data
+    ], 200);
+  }
+
+  //update status
+  public function updateStatus(Request $request, $id)
+  {
+    $data = Pengaduans::find($id);
+
+    $data->update([
+      'status'  =>  $request->status
+    ]);
+
+    if ($data) {
+      return response()->json([
+        'success' =>  true,
+        'code'    =>  200,
+        'message' =>  'success update status',
+        'data'    =>  $data
+      ], 200);
+    }
+  
+}
 }

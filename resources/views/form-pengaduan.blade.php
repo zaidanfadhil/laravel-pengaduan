@@ -2,6 +2,8 @@
 
 
 @section('content')
+<body style= "background : red">
+    
 
 
 
@@ -69,4 +71,5 @@
         </div>
     </div>
 </div>
+</body>
 @endsection

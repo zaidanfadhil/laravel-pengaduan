@@ -27,7 +27,7 @@
                             <td>{{ $pengaduan->tanggal_pengaduan }}</td>
                             <td>{{ $pengaduan->nik }}</td>
                             <td>{{\Str::limit( $pengaduan->isi_laporan,30) }}</td>
-                            <td><img src="/img/{{ $pengaduan->foto }}"></td>
+                            <td><img src="./img/{{ $pengaduan->foto }}"></td>
 
                             <td>{{ $pengaduan->status }}</td> --}}
                         </tr>

@@ -12,7 +12,7 @@
             <div class="card card-body shadow">
                 <div class="card-header">
                     <div class="d-flex justify-content-between">
-                        <a href="/admin/pengaduan">
+                        <a href="/Admin/pengaduan">
                             <i class="fas fa-arrow-circle-left fa-2x">
                             </i>
                         </a>

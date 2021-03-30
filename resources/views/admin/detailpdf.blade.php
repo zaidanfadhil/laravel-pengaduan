@@ -15,7 +15,7 @@
         <h4>Dilaporkan Pada Tanggal: {{ $data_pengaduan->tanggal_pengaduan  }}   </h4>
         <h4>Laporan : {{ $data_pengaduan->isi_laporan }}</h4>
         <h4>Bukti Foto:</h4>
-        <h4>{{ $data_pengaduan->foto }}</h4>
+        <h4><img src="./img/{{ $data_pengaduan->foto }}" alt="foto"></h4>
         <br>
         <hr>
         <h3>Tanggapan Yang diberikan:</h3>

@@ -1,6 +1,9 @@
 @extends('layouts.applogin')
 
 @section('content')
+<body style = "background : red">
+    
+
 <div class="container">
     <div class="row justify-content-center my-5">
         <div class="col-lg-12 col-md-12 col-xl-6 my-5">
@@ -40,4 +43,5 @@
         </div>
     </div>
 </div>
+</body>
 @endsection

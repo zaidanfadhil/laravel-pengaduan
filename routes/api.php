@@ -20,8 +20,12 @@ Route::get('tanggapan','ApiController@tanggapan');
 
 Route::post('login','ApiController@login');
 Route::get('logout', 'ApiController@logout');
-Route::post('masyarakat','ApiController@store');
+Route::post('register','ApiController@register');
 
+$router->post('pengaduan', 'ApiController@createPengaduan');
+$router->get('pengaduan',  'ApiController@getPengaduan');
+$router->get('pengaduan/{id}',  'ApiController@getPengaduanId');
+$router->put('updatepengaduan/{id}',  'ApiController@updateStatus');
 
 
 

@@ -1,6 +1,9 @@
 @extends('layouts.applogin')
 
 @section('content')
+<body>
+    
+
 <div class="container mt-2">
     <h2 class="text-center">Detail Laporan Masyarakat</h2>
     <div class="row">
@@ -57,4 +60,5 @@
 
 
     </div>
+    </body>
 @endsection

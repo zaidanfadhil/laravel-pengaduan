@@ -39,7 +39,7 @@
                             <td>{{ $pengaduan->tanggal_pengaduan }}</td>
                             <td>{{ $pengaduan->nik }}</td>
                             <td>{{ $pengaduan->isi_laporan }}</td>
-                            <td><img src="/img/{{ $pengaduan->foto }}"></td>
+                            <td><img src="/img/{{ $pengaduan->foto }}" width="200"></td>
 
                             {{-- <td>{{ $pengaduan->masyarakat->nama }}</td> --}}
                             <td>{{ $pengaduan->status }}</td>

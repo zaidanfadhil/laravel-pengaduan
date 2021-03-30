@@ -39,8 +39,9 @@ class MasyarakatController extends Controller
         $data_pengaduan->foto = $filename;
         $data_pengaduan->status = request()->get('status');
         $data_pengaduan->save();
-        return redirect()->to('/laporan_pengaduan');
-
+       
+        return redirect()->to('/pengaduan');
+        
 
 
 
